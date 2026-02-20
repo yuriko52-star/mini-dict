@@ -1,4 +1,4 @@
-# laravel11-template  
+# mini-dict  
 ## git clone  
 1. ディレクトリ以下に、laravel11-template.gitをクローンしてリポジトリ名を好きな名前に変更  
 cd ディレクトリ  
