@@ -21,14 +21,31 @@
         </tr>
         @foreach($words as $word)
         <tr>
-            <td>{{ $word->word}}</td>
-            <td>{{ $word->meaning }}</td>
+            <form action="{{ route('word.update') }}" method="POST">
+                @method('PATCH')
+                @csrf
+            
+            <td>
+                <input type="text" name="word" class="input" value="{{ $word->word}}">
+                <input type="hidden" name="id" value="{{ $word->id }}">
+            </td>
+            <td>
+                <input type="text" class="input" name="meaning" value="{{ $word->meaning}}">
+                <input type="hidden" name="id" value="{{ $word->id }}">
+               </td>
             <td>
                 <button class="btn">編集</button>
             </td>
+            </form>
+            <form action="{{ route('word.delete') }}" method="POST">
+                    @method('DELETE')
+                    @csrf
+                
             <td>
+                <input type="hidden" name="id" value="{{ $word->id }}">
                 <button class="btn">削除</button>
             </td>
+            </form>
         </tr>
         @endforeach
     </table>

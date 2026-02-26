@@ -19,6 +19,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/word',[WordController::class,'index'])->name('word.index');
     Route::get('/word/create',[WordController::class,'create'])->name('word.create');
     Route::post('/word/store',[WordController::class,'store'])->name('word.store');
+    Route::patch('/word/update',[WordController::class,'update'])->name('word.update');
+    Route::delete('/word/delete',[WordController::class,'destroy'])->name('word.delete');
 });
 
 require __DIR__.'/auth.php';

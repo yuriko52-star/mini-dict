@@ -30,4 +30,17 @@ class WordController extends Controller
         ]);
         return redirect()->route('word.index');
     }
+    public function update(Request $request)
+    {
+        $word = $request->only(['word', 'meaning']);
+        Word::find($request->id)->update($word);
+
+        return redirect()->route('word.index');
+    }
+
+    public function destroy(Request $request)
+    {
+        Word::find($request->id)->delete();
+        return redirect()->route('word.index');
+    }
 }
