@@ -12,6 +12,13 @@
 </head>
 <body>
     <h1>単語一覧</h1>
+    <div class="">
+    <form action="{{ route('word.index') }}" method="GET">
+        @csrf
+        <input type="text" class="input" name="keyword">
+        <button class="btn" type="submit">検索</button>
+    </form>
+    </div>
     <table border="1">
         <tr>
             <th>単語</th>

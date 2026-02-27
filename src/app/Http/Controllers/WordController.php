@@ -8,12 +8,22 @@ use Illuminate\Support\Facades\Auth;
 
 class WordController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+        $keyword = $request->keyword;
         $words = auth()->user()
-        ->words()
-        ->latest()
-        ->paginate(5);
+            ->words()
+            ->when($keyword, function ($query, $keyword) {
+                $query->where(function($q) use ($keyword) {
+                    $q->where('word','like', "%{$keyword}%")
+                    ->orWhere('meaning', 'like', "%{$keyword}%");
+                });
+                
+            })
+            ->latest()
+            ->paginate(5)
+            ->withQueryString();
+        // $words = $query->paginate(5)->withQueryString();
         return view('list', compact('words'));
 
     }
@@ -43,4 +53,13 @@ class WordController extends Controller
         Word::find($request->id)->delete();
         return redirect()->route('word.index');
     }
+    /*public function search(Request $request)
+    {
+        $keyword = $request->input('keyword');
+        if(!empty($keyword)) {
+            $words->where('word', 'LIKE', "%{$keyword}%")->get();
+        }
+        return redirect()->route('word.index');
+    }
+        */
 }
