@@ -10,6 +10,7 @@
     <h2>単語と意味を入力してね!</h2>
     <h3>意味を調べたいときはこちらをクリックしてください</h3>
     <a href="https://eow.alc.co.jp/" class="" target="_blank">英次郎へ</a>
+    <a href="{{route('word.index')}}" class="">単語一覧へ</a>
     <form method="POST" action="{{ route('logout') }}">
         @csrf
         <button type="submit" class="btn">ログアウト</button>

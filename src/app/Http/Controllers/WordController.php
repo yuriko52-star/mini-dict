@@ -11,7 +11,8 @@ class WordController extends Controller
     public function index(Request $request)
     {
         $keyword = $request->keyword;
-        $words = auth()->user()
+        $sort = $request->sort ?? 'latest';
+        $query = auth()->user()
             ->words()
             ->when($keyword, function ($query, $keyword) {
                 $query->where(function($q) use ($keyword) {
@@ -19,11 +20,22 @@ class WordController extends Controller
                     ->orWhere('meaning', 'like', "%{$keyword}%");
                 });
                 
-            })
-            ->latest()
+            });
+            /*->latest()
             ->paginate(5)
-            ->withQueryString();
-        // $words = $query->paginate(5)->withQueryString();
+            ->withQueryString();*/
+            // 並び替え
+            if($sort === 'word') {
+                $query->orderBy('word', 'asc');
+            
+            } else {
+                $query->latest();
+            }
+            
+            // ->latest()
+            // ->paginate(5)
+            // ->withQueryString();
+         $words = $query->paginate(5)->withQueryString();
         return view('list', compact('words'));
 
     }

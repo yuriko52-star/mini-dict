@@ -19,6 +19,9 @@
         <button class="btn" type="submit">検索</button>
     </form>
     </div>
+    <a href="{{route('word.index', ['keyword' => request('keyword'), 'sort' => 'word']) }}" class="">アルファベット順</a>
+    
+    <a href="{{ route('word.index', ['keyword' => request('keyword'), 'sort' => 'latest']) }}" class="">最新順</a>
     <table border="1">
         <tr>
             <th>単語</th>
