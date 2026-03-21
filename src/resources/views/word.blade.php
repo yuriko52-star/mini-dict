@@ -17,7 +17,7 @@
     <div class="text-center py-20  mx-auto">
     <h1 class=" text-3xl md:text-4xl font-bold mb-4">Mini-Dictアプリへようこそ</h1>
     <h2 class="text-2xl md:text-3xl">単語と意味を入力してね!</h2>
-    <h3 class="pt-20 pb-10 md:text-2xl">意味を調べたいときはこちらをクリックしてください</h3>
+    <h3 class="pt-20 pb-10 md:text-2xl">意味を調べたいときはこちらをクリックしてね</h3>
     <a href="https://eow.alc.co.jp/" class="bg-red-400 px-5 md:bg-red-800 md:px-7 py-3 md:py-5 md:mr-20 mb-20 inline-block rounded md:text-xl  text-white font-bold" target="_blank">英次郎へ</a>
     <a href="{{route('word.index')}}" class="bg-blue-400 md:bg-blue-800 px-4 md:px-6 md:py-5 py-3 font-bold inline-block rounded text-white md:text-xl">単語一覧へ</a>
     
@@ -25,11 +25,11 @@
         @csrf
         <label for="" class="mx-5 block md:text-xl">単語</label>
         <div class="inline-block mb-10">
-            <input type="text" name="word" class="bg-slate-50 md:bg-white rounded  pr-20 md:py-4 md:pr-60 text-left md:border-black md:text-xl" value="" placeholder="英単語を入力してください">
+            <input type="text" name="word" class="bg-slate-50 md:bg-white rounded  pr-20 md:py-4 md:pr-60 text-left md:border-black md:text-xl" value="" placeholder="アルファベットを入力してね">
         </div>
         <label for="" class="block md:text-xl">意味</label>
         <div class="block mb-10">
-            <input type="text" name="meaning" class="bg-slate-50 md:bg-white md:border-black rounded pr-20 md:pr-60 md:py-4 md:text-xl" value="" placeholder="意味を入力してください">
+            <input type="text" name="meaning" class="bg-slate-50 md:bg-white md:border-black rounded pr-20 md:pr-60 md:py-4 md:text-xl" value="" placeholder="意味を入力してね">
         </div>
         <button type="submit"class="bg-red-400 md:bg-red-800  px-6 md:px-10 py-3  md:py-5 rounded-md text-white font-bold md:text-2xl">登録</button>
     </form>
