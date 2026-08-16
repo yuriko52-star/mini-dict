@@ -1,27 +1,17 @@
-# mini-dict  
-## git clone  
-1. ディレクトリ以下に、laravel11-template.gitをクローンしてリポジトリ名を好きな名前に変更  
-cd ディレクトリ  
-git clone git@github.com:yuriko52-star/laravel11-template.git  
-mv laravel11-template 好きな名前  
-2. 変更先(好きな名前)のリモートリポジトリをpublicで作成  
-3. ローカルリポジトリから紐付け先を変更.作成したリポジトリから url を取得して、以下のコマンドを実行  
-cd 好きな名前  
-git remote set-url origin 作成したリポジトリのurl  
-git remote -v  
-最後のコマンドで、変更先の url が表示されれば成功  
-4. 現在のローカルリポジトリのデータをリモートリポジトリに反映させる  
-git add .  
-git commit -m "リモートリポジトリの変更"  
-git push origin main  
-エラーが発生する場合は、 sudo chmod -R 777 *  
+# mini-dictアプリ  
+日々の英語学習に最適なミニ辞書です。  
+## 使い方  
+学習中わからない単語が出てきたら、単語の欄、意味の欄にそれぞれ入力して登録します。  
+英辞郎に進むボタンがあるのでコピペもできます。   
+スマホ対応もしているのでテキストの傍らにおいて、確認しながら学習できます。
+理解できるまで何回でも確認、検索できます。  
+理解できたら削除します。  
 
-git cloneしたらやること  
+## git clone   
+git clone git@github.com:yuriko52-star/mini-dict.git  
+
 docker-compose up -d --build  
 docker-compose exec php bash  
 composer install  
-.env ファイルの作成  
-cp .env.example .env  
-テキストを参照
-データベースが存在しているかを確認　　
-画面表示する前にマイグレーションしておくこと
+
+
