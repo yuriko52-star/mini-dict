@@ -18,7 +18,7 @@ docker-compose up -d --build
 docker-compose exec php bash  
 composer install  
 ## お願い  
-このアプリはhttp://localhostに入るとLaravelのWelcomeページに入ります。  
+このアプリはLaravelのWelcomeページに入ります。
 まず、右上のRegisterリンクで会員登録をお願いします。  
 登録が完了したらお使いいただけます。  
 
