@@ -9,20 +9,28 @@
 スマホ対応もしているのでテキストの傍らにおいて、確認しながら学習できます。
 理解できるまで何回でも確認、検索できます。  
 理解できたら削除します。
-
+  
 ## git clone
 
 git clone git@github.com:yuriko52-star/mini-dict.git
 
 docker-compose up -d --build  
 docker-compose exec php bash  
-composer install
+composer install  
+## お願い  
+このアプリはhttp://localhostに入るとLaravelのWelcomeページに入ります。  
+まず、右上のRegisterリンクで会員登録をお願いします。  
+登録が完了したらお使いいただけます。  
+
+
 
 ## 使用技術
 
 Laravel11  
 PHP 8.2.30  
 MySQL  
-Docker
+Docker  
+TailwindCss  
+
 
 　　
